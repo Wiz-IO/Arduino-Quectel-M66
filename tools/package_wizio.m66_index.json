@@ -35,14 +35,14 @@
       ],
       "tools": [
         {
-          "name": "m66_gcc",
+          "name": "bc66_gcc",
           "version": "1.70201.0",
           "systems": [
             {
               "host": "i686-mingw32",
-              "url": "https://bintray.com/platformio/dl-packages/download_file?file_path=toolchain-gccarmnoneeabi-windows-1.70201.0.tar.gz",
-              "archiveFileName": "toolchain-gccarmnoneeabi-windows-1.70201.0.tar.gz",
-              "size": "123968110",
+              "url": "http://wizio.eu/arduino/bc66/gcc.1.70201.0.zip",
+              "archiveFileName": "gcc.1.70201.0.zip",
+              "size": "106761211",
               "checksum": ""
             }
           ]
