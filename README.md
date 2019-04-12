@@ -28,6 +28,13 @@ https://www.youtube.com/channel/UCNOuJcC5qgU-SrtUwyqmtJQ?view_as=subscriber
 * **IS NOT READY TO INSTALL**
 * Add json link to Arduino - Preferences 
 
+https://raw.githubusercontent.com/Wiz-IO/Arduino-Quectel-M66/master/tools/package_wizio.m66_index.json
+
+* Open Borad Manager, Find WizIO, Install OR Update (remove old versions)
+* Select Board
+* Select Firmware
+* Click [Compile] or [Upload]
+
 
 >If you want to help / support:   
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ESUP9LCZMZTD6)
