@@ -56,8 +56,8 @@ recipe.objcopy.bin.2.pattern="{compiler.path}{compiler.objcopy.cmd}" -O binary "
 
 ###### Add header to BIN
 recipe.objcopy.hex.cmd.windows=gfh.bat
-recipe.objcopy.hex.1.pattern="C:\Users\georgi.angelov\AppData\Local\Arduino15\packages\WizIO\tools\m66_tools\GFH_Generator" "{build.path}/ARDUINO.bin"
-recipe.objcopy.hex.2.pattern=cmd /C copy /y  "C:\Users\georgi.angelov\AppData\Local\Arduino15\packages\WizIO\tools\m66_tools\app_image_bin.cfg" "{build.path}\"
+recipe.objcopy.hex.1.pattern="C:\PATH_TO\GFH_Generator" "{build.path}/ARDUINO.bin"
+recipe.objcopy.hex.2.pattern=cmd /C copy /y  "C:\PATH_TO\app_image_bin.cfg" "{build.path}\"
 
 ###### Compute size
 recipe.size.pattern="{compiler.path}{compiler.size.cmd}" -A "{build.path}/{build.project_name}.elf"
