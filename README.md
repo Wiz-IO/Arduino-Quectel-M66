@@ -3,7 +3,7 @@
  (must be full Arduino compatible)
 
 **A few words in the beginning**
-* **NOT READY FOR INSTALL*
+* **NOT READY FOR INSTALL**
 * **Version 2.0.0** ... beta, not everything tested...
 * This project not an official product of Quectel / Mediatek
 * The project is based on Quectel OpenCPU and **reverse engineering**
