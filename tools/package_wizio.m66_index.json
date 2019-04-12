@@ -53,7 +53,7 @@
           "systems": [
             {
               "host": "i686-mingw32",
-              "url": "http://m66_tools.1.0.zip",
+              "url": "https://github.com/Wiz-IO/Arduino-Quectel-M66/raw/master/tools/m66_tools.1.0.zip",
               "archiveFileName": "m66_tools.1.0.zip",
               "size": "0",
               "checksum": ""
