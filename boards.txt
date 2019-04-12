@@ -1,0 +1,32 @@
+# WizIO 2018 Georgi Angelov
+# https://github.com/Wiz-IO/Arduino-Quectel-M66
+# the.wizarda@gmail.com
+#
+# Arduino Core and platform.
+# For more info:
+# https:\\github.com\arduino\Arduino\wiki\Arduino-IDE-1.5---3rd-party-Hardware-specification
+
+menu.firmware=Firmware
+
+M66.build.core=opencpu
+M66.build.variant=m66
+M66.name=Quectel M66 Module
+M66.build.board=Quectel M66
+M66.build.compiler_path={runtime.tools.bc66_gcc.path}\bin\
+M66.build.mcu=-march=armv5te -mfloat-abi=soft -mfpu=vfp -mthumb-interwork
+M66.build.extra_flags=
+M66.build.f_cpu=260000000L
+
+M66.menu.firmware.V1=M66FAR01A12BT
+M66.menu.firmware.V1.build.firmware=M66FAR01A12BT
+
+M66.upload.maximum_size=368640
+M66.upload.maximum_data_size=102400
+M66.upload.tool=m66
+M66.upload.protocol=quectel
+M66.upload.use_1200bps_touch=false
+M66.upload.wait_for_upload_port=false
+M66.upload.native_usb=false
+M66.upload.via_ssh=false
+
+

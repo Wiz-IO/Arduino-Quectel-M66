@@ -1,0 +1,76 @@
+# WizIO 2018 Georgi Angelov
+# https://github.com/Wiz-IO/Arduino-Quectel-BC66/blob/master/README.md
+# the.wizarda@gmail.com
+#
+# Arduino Core and platform.
+# For more info:
+# https:\\github.com\arduino\Arduino\wiki\Arduino-IDE-1.5---3rd-party-Hardware-specification
+
+name=WizIO
+version=2.0.0
+
+compiler.path={build.compiler_path}
+compiler.c.cmd=arm-none-eabi-gcc
+compiler.cpp.cmd=arm-none-eabi-g++
+compiler.c.elf.cmd=arm-none-eabi-g++
+compiler.ar.cmd=arm-none-eabi-ar
+compiler.objcopy.cmd=arm-none-eabi-objcopy
+compiler.size.cmd=arm-none-eabi-size
+
+compiler.include="-I{build.core.path}\" "-I{build.core.path}\include\" "-I{build.core.path}\ril\inc\" "-I{build.core.path}\fota\inc\" "-I{build.core.path}\api\" 
+
+compiler.S.flags=-x assembler-with-cpp
+
+compiler.gcc.c.flags=-Os -Wall -g -fno-strict-aliasing -ffunction-sections -fdata-sections -Wno-pointer-sign -Wstrict-prototypes -Wp,-w "-DARDUINO=200"
+
+compiler.c.flags=-std=c11
+
+compiler.cpp.flags=-std=c++11 -fno-exceptions -fno-non-call-exceptions -fno-rtti -fno-use-cxa-atexit -fno-threadsafe-statics
+
+compiler.c.elf.flags=-nostartfiles -fno-use-cxa-atexit -Xlinker --gc-sections -Wl,--gc-sections
+
+compiler.ar.flags=rcs
+
+compiler.objcopy.remove.flags=--strip-debug
+
+compiler.objcopy.bin.flags=-O binary
+
+###### Compile S files
+recipe.S.o.pattern="{compiler.path}{compiler.c.cmd}" {build.mcu} {compiler.S.flags} {compiler.c.flags} {compiler.include} {includes} "{source_file}" -o "{object_file}"
+
+###### C Compile files
+recipe.c.o.pattern="{compiler.path}{compiler.c.cmd}" {build.mcu} {compiler.c.flags} {build.extra_flags} {compiler.gcc.c.flags} {compiler.include} {includes} "{source_file}" -c -o "{object_file}" 
+
+###### CPP Compile files
+recipe.cpp.o.pattern="{compiler.path}{compiler.cpp.cmd}" {build.mcu} {compiler.cpp.flags} {build.extra_flags} {compiler.gcc.c.flags} {compiler.include} {includes} "{source_file}" -c -o "{object_file}"
+
+###### AR Create archives
+recipe.ar.pattern="{compiler.path}{compiler.ar.cmd}" {compiler.ar.flags} "{archive_file_path}" "{object_file}" 
+
+###### ELF Combine gc-sections, archives, and objects
+recipe.c.combine.pattern="{compiler.path}{compiler.c.elf.cmd}" {build.mcu} {compiler.c.elf.flags} "-T{build.core.path}/cpp_m66.ld" -o "{build.path}/{build.project_name}.elf" "-L{build.path}" -Wl,--start-group "{build.path}/{archive_file}" {object_files} "{build.core.path}/lib_app_start_m66.a" "{build.core.path}/lib_{build.firmware}.a" -Wl,--end-group -v
+
+###### Create BIN
+recipe.objcopy.bin.1.pattern="{compiler.path}{compiler.objcopy.cmd}" -g -R .comment "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.dat"
+recipe.objcopy.bin.2.pattern="{compiler.path}{compiler.objcopy.cmd}" -O binary "{build.path}/{build.project_name}.dat" "{build.path}/ARDUINO.bin"
+
+###### Add header to BIN
+recipe.objcopy.hex.cmd.windows=gfh.bat
+recipe.objcopy.hex.1.pattern="C:\Users\georgi.angelov\AppData\Local\Arduino15\packages\WizIO\tools\m66_tools\GFH_Generator" "{build.path}/ARDUINO.bin"
+recipe.objcopy.hex.2.pattern=cmd /C copy /y  "C:\Users\georgi.angelov\AppData\Local\Arduino15\packages\WizIO\tools\m66_tools\app_image_bin.cfg" "{build.path}\"
+
+###### Compute size
+recipe.size.pattern="{compiler.path}{compiler.size.cmd}" -A "{build.path}/{build.project_name}.elf"
+recipe.size.regex=^(?:\.iram0\.text|\.iram0\.vectors|\.dram0\.data|\.flash\.text|\.flash\.rodata|)\s+([0-9]+).*
+recipe.size.regex.data=^(?:\.dram0\.data|\.dram0\.bss|\.noinit)\s+([0-9]+).*
+
+
+########################################## 
+
+
+tools.m66.cmd=
+tools.m66.cmd.windows=
+tools.m66.path=
+tools.m66.upload.params.verbose=-vvvvvv
+tools.m66.upload.params.quiet=-q
+tools.m66.upload.pattern=cmd /C echo [ UPLOAD ] USE QFlash Tool

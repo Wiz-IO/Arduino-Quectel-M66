@@ -1,0 +1,66 @@
+{
+  "packages": [
+    {
+      "name": "WizIO",
+      "maintainer": "WizIO",
+      "websiteURL": "https://github.com/Wiz-IO",
+      "email": "the_wizarda@gmail.com",
+      "platforms": [
+        {
+          "name": "Quectel M66",
+          "architecture": "m66",
+          "version": "2.0.0",
+          "category": "Contributed",
+          "url": "http://m66_core.2.0.0.zip",
+          "archiveFileName": "m66_core.2.0.0.zip",
+          "checksum": "",
+          "size": "0",
+          "help": { "online": "https://github.com/Wiz-IO/Arduino-Quectel-M66" },
+          "boards": [
+            { "name": "M66" }
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "WizIO",
+              "name": "m66_gcc",
+              "version": "1.70201.0"
+            },
+            {
+              "packager": "WizIO",
+              "name": "m66_tools",
+              "version": "1.0"
+            }            
+          ]
+        }
+      ],
+      "tools": [
+        {
+          "name": "m66_gcc",
+          "version": "1.70201.0",
+          "systems": [
+            {
+              "host": "i686-mingw32",
+              "url": "http://gcc.1.70201.0.zip",
+              "archiveFileName": "gcc.1.70201.0.zip",
+              "size": "106761211",
+              "checksum": ""
+            }
+          ]
+        },
+        {
+          "name": "m66_tools",
+          "version": "1.0",
+          "systems": [
+            {
+              "host": "i686-mingw32",
+              "url": "http://m66_tools.1.0.zip",
+              "archiveFileName": "m66_tools.1.0.zip",
+              "size": "0",
+              "checksum": ""
+            }
+          ]        
+        }
+      ]
+    }
+  ]
+}
