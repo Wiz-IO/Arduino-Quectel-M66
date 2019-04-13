@@ -1,4 +1,4 @@
-# WizIO 2018 Georgi Angelov
+# WizIO 2019 Georgi Angelov
 # https://github.com/Wiz-IO/Arduino-Quectel-BC66/blob/master/README.md
 # the.wizarda@gmail.com
 #
@@ -55,18 +55,15 @@ recipe.objcopy.bin.1.pattern="{compiler.path}{compiler.objcopy.cmd}" -g -R .comm
 recipe.objcopy.bin.2.pattern="{compiler.path}{compiler.objcopy.cmd}" -O binary "{build.path}/{build.project_name}.dat" "{build.path}/ARDUINO.bin"
 
 ###### Add header to BIN
-recipe.objcopy.hex.cmd.windows=gfh.bat
-recipe.objcopy.hex.1.pattern="C:\PATH_TO\GFH_Generator" "{build.path}/ARDUINO.bin"
-recipe.objcopy.hex.2.pattern=cmd /C copy /y  "C:\PATH_TO\app_image_bin.cfg" "{build.path}\"
+recipe.objcopy.hex.1.pattern="{runtime.tools.m66_tools.path}/GFH_Generator.exe" "{build.path}/ARDUINO.bin"
+recipe.objcopy.hex.2.pattern=cmd /C copy /y "{runtime.tools.m66_tools.path}\app_image_bin.cfg" "{build.path}\"
 
 ###### Compute size
 recipe.size.pattern="{compiler.path}{compiler.size.cmd}" -A "{build.path}/{build.project_name}.elf"
 recipe.size.regex=^(?:\.iram0\.text|\.iram0\.vectors|\.dram0\.data|\.flash\.text|\.flash\.rodata|)\s+([0-9]+).*
 recipe.size.regex.data=^(?:\.dram0\.data|\.dram0\.bss|\.noinit)\s+([0-9]+).*
 
-
 ########################################## 
-
 
 tools.m66.cmd=
 tools.m66.cmd.windows=
