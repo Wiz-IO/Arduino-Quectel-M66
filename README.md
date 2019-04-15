@@ -21,6 +21,8 @@ https://www.quectel.com/product/m66.htm
 
 **Videos** 
 
+https://www.youtube.com/watch?v=sQMidyRvn2A
+
 https://www.youtube.com/channel/UCNOuJcC5qgU-SrtUwyqmtJQ?view_as=subscriber
 
 ![Arduino Quectel M66](https://raw.githubusercontent.com/Wiz-IO/Arduino-Quectel-M66/master/arduino_quectel_m66.png)
