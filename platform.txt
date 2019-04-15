@@ -1,5 +1,5 @@
 # WizIO 2019 Georgi Angelov
-# https://github.com/Wiz-IO/Arduino-Quectel-BC66/blob/master/README.md
+# https://github.com/Wiz-IO/Arduino-Quectel-M66/blob/master/README.md
 # the.wizarda@gmail.com
 #
 # Arduino Core and platform.
