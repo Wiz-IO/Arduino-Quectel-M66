@@ -14,7 +14,7 @@
           "url": "https://github.com/Wiz-IO/Arduino-Quectel-M66/raw/master/tools/m66_core.2.0.0.zip",
           "archiveFileName": "m66_core.2.0.0.zip",
           "checksum": "",
-          "size": "252763",
+          "size": "293394",
           "help": { "online": "https://github.com/Wiz-IO/Arduino-Quectel-M66" },
           "boards": [
             { "name": "M66" }
