@@ -12,7 +12,7 @@ M66.build.core=opencpu
 M66.build.variant=m66
 M66.name=Quectel M66 Module
 M66.build.board=Quectel M66
-M66.build.compiler_path={runtime.tools.bc66_gcc.path}\bin\
+M66.build.compiler_path={runtime.tools.m66_gcc.path}\bin\
 M66.build.mcu=-march=armv5te -mfloat-abi=soft -mfpu=vfp -mthumb-interwork
 M66.build.extra_flags=
 M66.build.f_cpu=260000000L
