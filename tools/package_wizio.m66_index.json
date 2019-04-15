@@ -35,7 +35,7 @@
       ],
       "tools": [
         {
-          "name": "bc66_gcc",
+          "name": "m66_gcc",
           "version": "1.70201.0",
           "systems": [
             {
