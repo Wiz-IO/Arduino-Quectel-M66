@@ -3,7 +3,6 @@
  (must be full Arduino compatible)
 
 **A few words in the beginning**
-* **IS NOT READY TO INSTALL**
 * **Version 2.0.0** ... beta, not everything tested...
 * This project not an official product of Quectel / Mediatek
 * The project is based on Quectel OpenCPU and **reverse engineering**
@@ -29,7 +28,6 @@ https://www.youtube.com/channel/UCNOuJcC5qgU-SrtUwyqmtJQ?view_as=subscriber
 
 ## Install
 
-* **IS NOT READY TO INSTALL**
 * Add json link to Arduino - Preferences 
 
 https://raw.githubusercontent.com/Wiz-IO/Arduino-Quectel-M66/master/tools/package_wizio.m66_index.json
